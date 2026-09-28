@@ -1,0 +1,146 @@
+/* 
+    VIBE-FASHION 커스텀 스타일시트
+    초보자 가이드: Bootstrap 5를 기본으로 사용하고, 우리 쇼핑몰만의 세련된 디테일을 이곳에 정의합니다.
+*/
+
+:root {
+    --vibe-black: #111111;
+    --vibe-accent: #ff4757;
+    --vibe-gray: #f8f9fa;
+    --vibe-card-border: #e9ecef;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Pretendard", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    color: #2b2b2b;
+    background-color: #fafbfc;
+}
+
+/* 네비게이션 바 */
+.navbar-brand {
+    font-size: 1.5rem;
+    letter-spacing: 2px;
+}
+
+/* 히어로 섹션 */
+.hero-section {
+    background: linear-gradient(135deg, #18191a 0%, #2e3440 100%);
+    color: #ffffff;
+    padding: 90px 0;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::after {
+    content: "";
+    position: absolute;
+    top: -50%;
+    right: -10%;
+    width: 500px;
+    height: 500px;
+    background: radial-gradient(circle, rgba(255, 71, 87, 0.15) 0%, rgba(255, 255, 255, 0) 70%);
+    border-radius: 50%;
+    pointer-events: none;
+}
+
+.hero-badge {
+    display: inline-block;
+    padding: 6px 14px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    letter-spacing: 1px;
+}
+
+/* 상품 카드 스타일 */
+.product-card {
+    border: 1px solid var(--vibe-card-border);
+    border-radius: 12px;
+    overflow: hidden;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+    background: #ffffff;
+}
+
+.product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.08);
+}
+
+.product-image-wrapper {
+    position: relative;
+    overflow: hidden;
+    padding-top: 100%; /* 1:1 정방형 비율 유지 */
+    background-color: #f1f3f5;
+}
+
+.product-image-wrapper img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+.product-card:hover .product-image-wrapper img {
+    transform: scale(1.05);
+}
+
+.product-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 2;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 4px;
+}
+
+.category-tag {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: #868e96;
+    letter-spacing: 1px;
+}
+
+/* 장바구니 버튼 */
+.btn-cart {
+    background-color: var(--vibe-black);
+    color: #ffffff;
+    font-weight: 600;
+    transition: all 0.2s ease;
+}
+
+.btn-cart:hover {
+    background-color: var(--vibe-accent);
+    color: #ffffff;
+}
+
+/* 특징 바 (아이콘 섹션) */
+.feature-box {
+    padding: 24px 16px;
+    border-radius: 10px;
+    background-color: #ffffff;
+    border: 1px solid #f1f3f5;
+}
+
+/* 푸터 */
+footer {
+    background-color: #121212;
+    color: #adb5bd;
+}
+
+footer a {
+    color: #adb5bd;
+    text-decoration: none;
+    transition: color 0.2s ease;
+}
+
+footer a:hover {
+    color: #ffffff;
+}
